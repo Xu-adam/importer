@@ -113,19 +113,17 @@ def main():
                         completed_percentage += 10
                         print(f"{completed_percentage}% completed in {(time.time() - total_start_time) / 60:.2f} minutes.")
 
-                    # check every 20% of the chunks
-                    if completed_files % submit_size  == 0:
-                        clean() # free memory of the previous 20%
-                        submit_size = min(submit_size, rest_chunk_num)
-                        if submit_size > 0:
-                            # submit the next 20% (or the rest)
-                            new_futures = submit_next_percentage(executor, chunk_iter, submit_size, connection_queue, table)
-                            rest_chunk_num -= submit_size
-                            futures.update(new_futures)
-                            check_memory()
-                        else:
-                            # no more chunks to submit
-                            break
+                    if submit_size > 0:
+                        # check every 20% of the chunks
+                        if completed_files % submit_size  == 0:
+                            clean() # free memory of the previous 20%
+                            submit_size = min(submit_size, rest_chunk_num)
+                            if submit_size > 0:
+                                # submit the next 20% (or the rest)
+                                new_futures = submit_next_percentage(executor, chunk_iter, submit_size, connection_queue, table)
+                                rest_chunk_num -= submit_size
+                                futures.update(new_futures)
+                                check_memory()
 
         print(f"Data import completed in {(time.time() - total_start_time) / 60:.2f} minutes.")
         print(f"{input_file} has been imported to the database.")
