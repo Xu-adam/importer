@@ -1,5 +1,5 @@
 # High-Performance CSV-SQL Importer
-## This script can provide an import speed of approximately `50,000 rows per second`.
+## This script can provide an import speed of `40000 - 50,000 rows per second`.
 #### Utilizes `pandas` + `pyodbc` + `multi-threading` + `memory management`.
 With a more powerful CPU/SSD, increasing the number of threads can further enhance the import speed.
 ## Features:
