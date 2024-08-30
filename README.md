@@ -7,5 +7,5 @@ With a more powerful CPU/SSD, increasing the number of threads can further enhan
 #### 2. `Memory Efficiency:` Consumes minimal memory due to optimization and management techniques, allowing smooth operation on 32(even 16)GB RAM systems when importing multiple 10 GB files consecutively, with a peak usage of less than 8 GB.
 #### 3. `User-Friendly:` Easy to use—simply enter the database configurations, and the script will begin importing all the files in the same directory consecutively. It can also be easily automated for hands-free operation.
 #### 4. `Improved Data Type Conversions:` Outperforms in handling implicit data type conversions, ensuring smoother imports.
-#### 5. `Better Error Handling`: The import process is monitored; if an error occurs, it is easily traceable while the rest of the data continues to import successfully.
+#### 5. `Better Error Handling:` The import process is monitored; if an error occurs, it is easily traceable while the rest of the data continues to import successfully.
 
